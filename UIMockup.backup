@@ -1067,7 +1067,10 @@
       <ColumnDefinition Width="*"/>
       <ColumnDefinition Width="64"/>
     </Grid.ColumnDefinitions>
-    
+    <Button Width="64" Height="64" VerticalAlignment="Center" BorderThickness="5" FontSize="40" FontWeight="Bold" Foreground="Red" HorizontalContentAlignment="Center" Style="{StaticResource BetterGlassButton}" VerticalContentAlignment="Center">
+      <Ellipse Width="100" Height="100" Fill="{StaticResource SuperSpeedImageLayerBrush}">
+      </Ellipse>
+    </Button>
     <Grid Width="64" Height="64" Grid.Column="3" Grid.Row="0">
       <Viewbox Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" Stretch="UniformToFill">
         <Grid Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center">
