@@ -1,0 +1,78 @@
+<Page
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <WrapPanel Margin="10">
+      <Border>
+         <Border.BitmapEffect>
+            <BitmapEffectGroup>
+               <DropShadowBitmapEffect/>
+            </BitmapEffectGroup>
+         </Border.BitmapEffect>
+         <StackPanel>
+            <Button Margin="5,5,5,5" Content="Sample"/>
+            <TextBox Margin="5,5,5,5" Text="Bevel"/>
+         </StackPanel>
+      </Border>
+      <Border BorderBrush="Gray" BorderThickness="8">
+         <Border.BitmapEffect>
+            <BevelBitmapEffect>
+            </BevelBitmapEffect>
+         </Border.BitmapEffect>
+         <Label>Bevel
+         
+         
+         </Label>
+      </Border>
+      <Border BorderBrush="Gray" BorderThickness="8">
+         <Border.BitmapEffect>
+            <BevelBitmapEffect
+               EdgeProfile="Linear"
+               LightAngle="180"
+               Relief=".2"
+               Smoothness=".9">
+            </BevelBitmapEffect>
+         </Border.BitmapEffect>
+         <Label>Bevel
+         
+         
+         </Label>
+      </Border>
+      <TextBlock FontSize="30" Padding="5" Text="OuterGlow">
+         <TextBlock.BitmapEffect>
+            <OuterGlowBitmapEffect>
+            </OuterGlowBitmapEffect>
+         </TextBlock.BitmapEffect>
+      </TextBlock>
+      <Button Width="Auto">
+         <TextBlock Padding="5" Text="Bevel">
+         </TextBlock>
+         <Button.BitmapEffect>
+            <BevelBitmapEffect>
+            </BevelBitmapEffect>
+         </Button.BitmapEffect>
+      </Button>
+      <Button Width="Auto">
+         <TextBlock FontSize="30" Padding="5" Text="Emboss">
+         </TextBlock>
+         <Button.BitmapEffect>
+            <EmbossBitmapEffect>
+            </EmbossBitmapEffect>
+         </Button.BitmapEffect>
+      </Button>
+      <Button>
+         <TextBlock FontSize="30" Padding="5" Text="OuterGlow">
+         </TextBlock>
+         <Button.BitmapEffect>
+            <OuterGlowBitmapEffect>
+            </OuterGlowBitmapEffect>
+         </Button.BitmapEffect>
+      </Button>
+      <TextBox BorderThickness="4" IsReadOnly="True" Text="Look sunken, playing with BorderThickness increase effect but higher than 4 looks bad (Better = 2)."/>
+      <TextBox Margin="5,5,5,5" Text="Drop shadow increase sunken effect">
+        <TextBox.BitmapEffect>
+            <DropShadowBitmapEffect ShadowDepth=".1" Softness=".2">
+            </DropShadowBitmapEffect>
+        </TextBox.BitmapEffect>
+      </TextBox>
+   </WrapPanel>
+</Page>

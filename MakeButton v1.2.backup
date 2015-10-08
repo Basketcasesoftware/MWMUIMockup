@@ -1,0 +1,185 @@
+
+<Page
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  Width="500"
+  Height="400"
+  HorizontalAlignment="Left"
+  Background="Black">
+  <Page.Resources>
+  <!-- Base image -->
+    <BitmapImage x:Key="ButtonImage" DecodePixelHeight="256" DecodePixelWidth="256" UriSource="Spider.png"/>
+    
+  <!-- Normal button colors -->
+    <Color x:Key="NormalOuterEdgeColor">
+      Gold
+    </Color>
+    
+    <Color x:Key="NormalBandColorTop">
+      White
+    </Color>
+    
+    <Color x:Key="NormalBandColorBottom">
+      Black
+    </Color>
+    
+    <Color x:Key="NormalInnerEdgeColor">
+      Gold
+    </Color>
+    
+  <!-- Hover button colors -->
+    <Color x:Key="HoverOuterEdgeColor">
+      Gold
+    </Color>
+    
+    <Color x:Key="HoverBandColorTop">
+      White
+    </Color>
+    
+    <Color x:Key="HoverBandColorBottom">
+      Black
+    </Color>
+    
+    <Color x:Key="HoverInnerEdgeColor">
+      Gold
+    </Color>
+    
+  <!-- Click button colors -->
+	<Color x:Key="ClickOuterEdgeColor">
+      Gold
+    </Color>
+    
+    <Color x:Key="ClickBandColorTop">
+      White
+    </Color>
+    
+    <Color x:Key="ClickBandColorBottom">
+      Black
+    </Color>
+    
+    <Color x:Key="ClickInnerEdgeColor">
+      Gold
+    </Color>
+  <!-- Disabled button colors -->
+  
+  <!-- Common elements -->
+    <ImageBrush x:Key="ImageLayerBrush" ImageSource="{StaticResource ButtonImage}" Stretch="UniformToFill"/>
+    
+    <SolidColorBrush x:Key="NormalOuterEdgeColorBrush" Color="{StaticResource NormalOuterEdgeColor}"/>
+    
+    <RadialGradientBrush x:Key="BackgroundGradient">
+      <GradientStop Offset="0.0" Color="#FFFFFFFF"/>
+      <GradientStop Offset="0.1" Color="#FFFCFCFC"/>
+      <GradientStop Offset="0.2" Color="#FFF5F5F5"/>
+      <GradientStop Offset="0.3" Color="#FFE8E8E8"/>
+      <GradientStop Offset="0.4" Color="#FFD6D6D6"/>
+      <GradientStop Offset="0.5" Color="#FFBFBFBF"/>
+      <GradientStop Offset="0.6" Color="#FFA3A3A3"/>
+      <GradientStop Offset="0.7" Color="#FF828282"/>
+      <GradientStop Offset="0.8" Color="#FF5C5C5C"/>
+      <GradientStop Offset="0.9" Color="#FF303030"/>
+      <GradientStop Offset="1.0" Color="#FF000000"/>
+    </RadialGradientBrush>
+    
+    <LinearGradientBrush x:Key="NormalInnerBorderBand" StartPoint="531.006,-1.24" EndPoint="531.006,-76.4" MappingMode="Absolute" SpreadMethod="Pad">
+      <GradientStop Offset="0" Color="{StaticResource NormalBandColorBottom}"/>
+      <GradientStop Offset="1" Color="{StaticResource NormalBandColorTop}"/>
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="HoverInnerBorderBand" StartPoint="531.006,-1.24" EndPoint="531.006,-76.4" MappingMode="Absolute" SpreadMethod="Pad">
+      <GradientStop Offset="0" Color="{StaticResource HoverBandColorBottom}"/>
+      <GradientStop Offset="1" Color="{StaticResource HoverBandColorTop}"/>
+    </LinearGradientBrush>
+	
+	<LinearGradientBrush x:Key="ClickInnerBorderBand" StartPoint="531.006,-1.24" EndPoint="531.006,-76.4" MappingMode="Absolute" SpreadMethod="Pad">
+      <GradientStop Offset="0" Color="{StaticResource HoverBandColorBottom}"/>
+      <GradientStop Offset="1" Color="{StaticResource HoverBandColorTop}"/>
+    </LinearGradientBrush>
+    
+    <Pen
+      x:Key="NormalInnerBorder"
+      Brush="{StaticResource NormalInnerBorderBand}"
+      DashCap="Round"
+      EndLineCap="Round"
+      LineJoin="Round"
+      MiterLimit="4"
+      StartLineCap="Round"
+      Thickness="2.954"/>
+      
+    <Style TargetType="Viewbox">
+      <Setter Property="Width" Value="100"/>
+      <Setter Property="Height" Value="100"/>
+      <Setter Property="SnapsToDevicePixels" Value="True"/>
+      <Setter Property="HorizontalAlignment" Value="Center"/>
+      <Setter Property="VerticalAlignment" Value="Center"/>
+      <Setter Property="Stretch" Value="UniformtoFill"/>
+    </Style>
+    
+    <Style TargetType="Grid">
+      <Setter Property="Width" Value="100"/>
+      <Setter Property="Height" Value="100"/>
+    </Style>
+	
+	  <Style TargetType="Ellipse" x:Key="BackgroundLayer">
+	    <Setter Property="Width" Value="100"/>
+	    <Setter Property="Height" Value="100"/>
+	    
+	    <Setter Property="HorizontalAlignment" Value="Left"/>
+	    <Setter Property="VerticalAlignment" Value="Top"/>
+		
+		<Setter Property="StrokeThickness" Value="5"/>
+	    
+	    <Setter Property="Fill" Value="{StaticResource BackgroundGradient}"/>
+	  </Style>
+	  
+	  <Style TargetType="Ellipse" BasedOn="{StaticResource BackgroundLayer}" x:Key="NormalBackgroundLayer">
+	    <Setter Property="Stroke" Value="{StaticResource NormalOuterEdgeColorBrush}"/>
+	  </Style>
+	  
+	  <Style TargetType="Ellipse" BasedOn="{StaticResource BackgroundLayer}" x:Key="HoverBackgroundLayer">
+	    <Setter Property="Stroke" Value="{StaticResource NormalOuterEdgeColorBrush}"/>
+	  </Style>
+	  
+	  <Style TargetType="Ellipse" BasedOn="{StaticResource BackgroundLayer}" x:Key="ClickBackgroundLayer">
+	    <Setter Property="Stroke" Value="{StaticResource NormalOuterEdgeColorBrush}"/>
+	  </Style>
+	  
+	  <Style TargetType="Ellipse" x:Key="ImageLayer">
+	    <Setter Property="Width" Value="88"/>
+	    <Setter Property="Height" Value="88"/>
+	    
+	    <Setter Property="HorizontalAlignment" Value="Left"/>
+	    <Setter Property="VerticalAlignment" Value="Top"/>
+		
+		<Setter Property="Margin" Value="6,6,0,0"/>
+		
+		<Setter Property="Stroke" Value="Transparent"/>
+	    
+	    <Setter Property="Fill" Value="{StaticResource ImageLayerBrush}"/>
+	  </Style>
+  </Page.Resources>
+  
+  <UniformGrid Width="500" HorizontalAlignment="Left" Columns="4">
+    <Viewbox>
+		<Grid>
+		    <Ellipse Style="{StaticResource NormalBackgroundLayer}"/>
+	    </Grid>
+    </Viewbox>
+    
+    <Viewbox>
+		<Grid>
+			<Ellipse Style="{StaticResource HoverBackgroundLayer}"/>
+		</Grid>
+    </Viewbox>
+    
+    <Viewbox>
+		<Grid>
+			<Ellipse Style="{StaticResource ClickBackgroundLayer}"/>
+		</Grid>
+    </Viewbox>
+    
+    <Viewbox>
+      <Grid></Grid>
+    </Viewbox>
+  </UniformGrid>
+</Page>

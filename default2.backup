@@ -1,0 +1,80 @@
+
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Page.Resources>
+  
+  <!-- SimpleStyles: Label -->
+    <Style x:Key="GlassLabel" TargetType="{x:Type Label}">
+      <Setter Property="HorizontalContentAlignment" Value="Left"/>
+      <Setter Property="VerticalContentAlignment" Value="Center"/>
+      
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type Label}">
+            <Viewbox Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True" Stretch="UniformToFill">
+              <Grid Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Ellipse Width="100" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top">
+                  <Ellipse.Fill>
+                    <RadialGradientBrush x:Key="BackgroundGradient">
+                      <GradientStop Offset="0.0" Color="#FFFFFFFF"/>
+                      <GradientStop Offset="0.1" Color="#FFFCFCFC"/>
+                      <GradientStop Offset="0.2" Color="#FFF5F5F5"/>
+                      <GradientStop Offset="0.3" Color="#FFE8E8E8"/>
+                      <GradientStop Offset="0.4" Color="#FFD6D6D6"/>
+                      <GradientStop Offset="0.5" Color="#FFBFBFBF"/>
+                      <GradientStop Offset="0.6" Color="#FFA3A3A3"/>
+                      <GradientStop Offset="0.7" Color="#FF828282"/>
+                      <GradientStop Offset="0.8" Color="#FF5C5C5C"/>
+                      <GradientStop Offset="0.9" Color="#FF303030"/>
+                      <GradientStop Offset="1.0" Color="#FF000000"/>
+                    </RadialGradientBrush>
+                  </Ellipse.Fill>
+                </Ellipse>
+                
+                <Grid Width="100" Height="100" HorizontalAlignment="Top" VerticalAlignment="Center">
+                  <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="True"/>
+                </Grid>
+              </Grid>
+            </Viewbox>
+            
+            <ControlTemplate.Triggers>
+              <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Foreground" Value="#888888"/>
+              </Trigger>
+            </ControlTemplate.Triggers>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    
+    <!-- SimpleStyles: ProgressBar -->
+
+<Style x:Key="{x:Type ProgressBar}"
+     TargetType="{x:Type ProgressBar}">
+  <Setter Property="Template">
+    <Setter.Value>
+      <ControlTemplate TargetType="{x:Type ProgressBar}">
+        <Grid MinHeight="14" MinWidth="200">
+          <Border 
+            Name="PART_Track" 
+            CornerRadius="2" 
+            Background="#E0E0E0"
+            BorderBrush="#888888"
+            BorderThickness="1" />
+          <Border 
+            Name="PART_Indicator" 
+            CornerRadius="2" 
+            Background="#808080" 
+            BorderBrush="#404040" 
+            BorderThickness="1" 
+            HorizontalAlignment="Left" />
+        </Grid>
+      </ControlTemplate>
+    </Setter.Value>
+  </Setter>
+</Style>
+
+  </Page.Resources>
+  <Grid>
+    <Label Height="64" Width="64" Style="{StaticResource GlassLabel}" FontSize="20">*</Label>
+  </Grid>
+</Page>
