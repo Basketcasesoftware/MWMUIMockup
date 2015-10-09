@@ -1,8 +1,8 @@
 <Page
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-  Width="768"
-  Height="140"
+  Width="640"
+  Height="64"
   HorizontalAlignment="Left"
   VerticalAlignment="Top"
   Background="Transparent">
@@ -44,7 +44,7 @@
       x:Key="SpiderClimbImage"
       DecodePixelHeight="256"
       DecodePixelWidth="256"
-      UriSource="SpiderClimb.png"/>
+      UriSource="SpiderClimb2.png"/>
       
       <BitmapImage
       x:Key="FlightImage"
@@ -228,7 +228,7 @@
     </Style>
   </Page.Resources>
   
-  <UniformGrid Width="768" HorizontalAlignment="Left" Columns="12">
+  <UniformGrid Width="640" HorizontalAlignment="Left" Columns="10">
     <Viewbox>
       <Grid Width="120" Height="120">
         <Grid.Background>
@@ -763,22 +763,6 @@
           </Ellipse.Fill>
         </Ellipse>
       </Grid>
-      </Grid>
-    </Viewbox>
-    
-    <Viewbox>
-      <Grid Width="120" Height="120">
-        <Grid.Background>
-          <ImageBrush ImageSource="ButtonBase.png"/>
-        </Grid.Background>        
-      </Grid>
-    </Viewbox>
-    
-    <Viewbox>
-      <Grid Width="120" Height="120">
-        <Grid.Background>
-          <ImageBrush ImageSource="ButtonBase.png"/>
-        </Grid.Background>        
       </Grid>
     </Viewbox>
     
